@@ -1,36 +1,52 @@
-📌 Projeto Prefect – Pipeline de Extração de Dados
+# 🚀 Att Prefect – Fluxo Simples Local
 
-Este projeto demonstra a criação de um pipeline de dados usando Prefect, com um fluxo simples de extração implementado no arquivo extract.py.
+Projeto de prática com **Prefect 3**: criação de um fluxo básico de extração, execução e monitoramento local.
 
-# 🧠 O que foi desenvolvido
-
-## ✔️ 1. Criação de um fluxo Prefect
-
-
-Foi criado um **flow Prefect** responsável por:
-
-- Executar tarefas de extração simples (demonstração)  
-- Rodar localmente usando o servidor do Prefect  
-
-**Elementos usados no código:**
-
-- `@task`  
-- `@flow`  
-- Execução de funções dentro do fluxo principal  
+Repositório: https://github.com/mgabriiella/Att-Prefect
 
 ---
 
-## ✔️ 2. Subida do projeto no GitHub
-
-Incluindo:
-
-- Iniciar repositório  
-- Configurar `.gitignore` (Python + venv + `.env`)  
-- Conectar ao GitHub  
-- Fazer primeiro commit e push  
+## ✅ O que tem aqui
+- Um flow Prefect simples em `extract.py`
+- Decoração com `@task` e `@flow`
+- Execução e monitoramento via servidor local do Prefect
+- Configuração completa de Git/GitHub + `.gitignore`
 
 ---
 
-## ✔️ 3. Execução do servidor Prefect
+## ▶️ Como rodar (passo a passo)
 
-O servidor local foi iniciado com:
+```bash
+# 1. Clone o repositório
+git clone https://github.com/mgabriiella/Att-Prefect.git
+cd Att-Prefect
+
+# 2. Crie e ative o ambiente virtual
+python -m venv venv
+venv\Scripts\activate    # Windows
+# source venv/bin/activate  # Linux/Mac
+
+# 3. Instale as dependências
+pip install -r requirements.txt
+
+# 4. Inicie o servidor Prefect (em um terminal)
+prefect server start
+
+# 5. Execute o fluxo (em outro terminal)
+python extract.py
+Acesse a interface do Prefect em: http://127.0.0.1:4200
+
+🔒 Segredos e ambiente
+
+Crie um arquivo .env na raiz (exemplo dentro do projeto)
+Ele já está ignorado no .gitignore
+
+
+🛠️ Estrutura do projeto
+textAtt-Prefect/
+├── extract.py              # fluxo principal
+├── requirements.txt
+├── .gitignore
+├── .env                    # (não versionado)
+├── venv/                   # (ignorado)
+└── README.md
